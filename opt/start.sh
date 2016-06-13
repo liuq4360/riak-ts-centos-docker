@@ -14,6 +14,8 @@ riak start
 # Join the cluster if it is not the first node
 if [ x${IS_FIRST_NODE}x == "xfalsex" ]; then
 
+  sleep 30
+
   riak-admin cluster join riak@${FIRST_RIAK_IP}
 
   riak-admin cluster plan
